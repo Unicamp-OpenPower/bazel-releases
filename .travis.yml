@@ -15,5 +15,5 @@ script:
   - unzip bazel-0.23.0-dist.zip
   - EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk ./compile.sh
   - mv output/bazel output/bazel_bin_ppc64le_0.23.0
-  - lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/bazel/ubuntu_14.04 /home/ubuntu/workspace/bazel-ubuntu14-ppc64le-releases/work/output/bazel_bin_ppc64le_0.23.0" 
+  - lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/bazel/ubuntu_14.04 /home/travis/build/Unicamp-OpenPower/bazel-releases/work/output/bazel_bin_ppc64le_0.23.0" 
   
