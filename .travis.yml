@@ -1,14 +1,14 @@
-dist: xenial
-os: linux-ppc64le
+dist: trusty
 language: java
+os: linux-ppc64le
 sudo: required
 jdk:
   - openjdk8
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y build-essential python zip unzip lftp
-  
+  - sudo apt-get install -y build-essential python zip unzip 
+  - sudo apt-get install -y lftp
 script:
   - mkdir work
   - cd work
@@ -16,5 +16,4 @@ script:
   - unzip bazel-0.22.0-dist.zip
   - EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk ./compile.sh
   - mv output/bazel output/bazel_bin_ppc64le_0.22.0
-  - lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/bazel/ubuntu_16.04 /home/travis/build/Unicamp-OpenPower/bazel-releases/work/output/bazel_bin_ppc64le_0.22.0" 
-  
+  - lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/bazel/ubuntu_14.04 /home/travis/build/Unicamp-OpenPower/bazel-releases/work/output/bazel_bin_ppc64le_0.22.0" 
