@@ -13,7 +13,7 @@ jdk:
 
 before_install:
   - sudo apt-get install python3
-  - python3 bazel_version.py
+  - python3 bazel-version.py
   - sudo apt-get update
   - sudo apt-get install -y build-essential python zip unzip 
   - sudo apt-get install -y lftp
