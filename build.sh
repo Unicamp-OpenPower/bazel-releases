@@ -1,6 +1,3 @@
-
-lftp -c "open -u  $USER,$PASS ftp://oplab9.parqtec.unicamp.br; mkdir /ppc64el/bazel/ubuntu_16.04/latest" 
-lftp -c "open -u  $USER,$PASS ftp://oplab9.parqtec.unicamp.br; mkdir /ppc64el/bazel/ubuntu_14.04/latest"
 if [ $(cat current_version.txt) != $(cat ftp_version.txt) ]
 then
     version=$(cat current_version.txt)
