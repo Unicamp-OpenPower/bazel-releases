@@ -9,8 +9,7 @@ then
     sudo unzip bazel-$version-dist.zip
     sudo EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk ./compile.sh
     sudo mv output/bazel output/bazel_bin_ppc64le_$version
-    cd ..
-    if [ $version > old_version ]
+    if [ $version > $old_version ]
     then
         lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/bazel/$OS/latest /home/travis/build/Unicamp-OpenPower/bazel-releases/work/output/bazel_bin_ppc64le_$version" 
         lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/bazel/$OS/latest/bazel_bin_ppc64le_$old_version" 
