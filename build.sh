@@ -5,6 +5,13 @@ then
     old_version=$(cat ftp_version.txt)
     sudo mkdir work
     cd work
+    
+    echo "breakpointtag"
+    echo $OS
+    echo $version
+    echo $del_version
+    echo $old_version
+    
     sudo wget https://github.com/bazelbuild/bazel/releases/download/$version/bazel-$version-dist.zip
     sudo unzip bazel-$version-dist.zip
     sudo EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk ./compile.sh
