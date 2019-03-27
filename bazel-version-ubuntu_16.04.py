@@ -3,6 +3,7 @@ import requests
 # find and save the current Bazel release
 html = str(
     requests.get('https://github.com/bazelbuild/bazel/releases').content)
+html = html[5000:]
 index = html.find('tree/')
 current_version = html[index + 5:index + 11]
 file = open('current_version.txt', 'w')
