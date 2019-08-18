@@ -17,6 +17,8 @@ ftp_version=1
 
 if [ $github_version != $ftp_version ]
 then
+    mkdir work
+    cd work
     wget https://github.com/bazelbuild/bazel/releases/download/$github_version/bazel-$github_version-dist.zip
     unzip bazel-$github_version-dist.zip
     sudo EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk ./compile.sh
