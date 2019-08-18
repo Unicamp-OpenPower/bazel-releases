@@ -2,17 +2,7 @@
 #ftp_version=$(cat ftp_version.txt)
 #del_version=$(cat delete_version.txt)
 
-
-#github_version=0.28.0
-#github_version=0.27.2
-#github_version=0.27.1
-#github_version=0.27.0
-#github_version=0.26.1
-#github_version=0.26.0
-#github_version=0.25.3
-#github_version=0.25.2
-#github_version=0.25.1
-github_version=0.25.0
+github_version=$ver
 ftp_version=1
 
 if [ $github_version != $ftp_version ]
