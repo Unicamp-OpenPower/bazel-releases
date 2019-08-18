@@ -1,11 +1,5 @@
-matrix:
-  include:
-    - os: linux-ppc64le
-      dist: trusty
-      env: OS=ubuntu_14.04
-    - os: linux-ppc64le
-      dist: xenial
-      env: OS=ubuntu_16.04
+os: linux-ppc64le
+dist: xenial
 language: java
 sudo: required
 jdk:
@@ -14,7 +8,7 @@ jdk:
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y build-essential python3 zip unzip lftp
-  - python3 bazel-version-$OS.py
+  - python3 bazel-version.py
 
 script:
   - bash build.sh
