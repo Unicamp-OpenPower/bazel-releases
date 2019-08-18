@@ -1,14 +1,14 @@
 matrix:
   include:
-    env: ver=0.25.1
-    env: ver=0.25.2
-    env: ver=0.25.3
-    env: ver=0.26.0
-    env: ver=0.26.1
-    env: ver=0.27.0
-    env: ver=0.27.1
-    env: ver=0.27.2
-    env: ver=0.28.0
+    - env: ver=0.25.1
+    - env: ver=0.25.2
+    - env: ver=0.25.3
+    - env: ver=0.26.0
+    - env: ver=0.26.1
+    - env: ver=0.27.0
+    - env: ver=0.27.1
+    - env: ver=0.27.2
+    - env: ver=0.28.0
 
 os: linux-ppc64le
 dist: xenial
