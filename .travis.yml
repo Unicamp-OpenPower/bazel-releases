@@ -8,7 +8,6 @@ matrix:
     - env: ver=0.27.0
     - env: ver=0.27.1
     - env: ver=0.27.2
-    - env: ver=0.28.0
 
 os: linux-ppc64le
 dist: xenial
@@ -26,5 +25,6 @@ script:
   - bash build.sh
 
 deploy:
-  provider: script
-  script: sudo apt-get install -y lftp; lftp -c "set xfer:use-temp-file yes; open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/bazel/ubuntu_16.04 $TRAVIS_BUILD_DIR/bazel/output/bazel_bin_ppc64le_$ver"
+  provider: script  
+  script: sudo apt-get install -y lftp; bash ftp_upload.sh
+  skip_cleanup: true
