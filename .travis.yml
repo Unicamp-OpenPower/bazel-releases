@@ -1,24 +1,16 @@
-matrix:
-  include:
-    - env: ver=0.25.1
-    - env: ver=0.25.2
-    - env: ver=0.25.3
-    - env: ver=0.26.0
-    - env: ver=0.26.1
-    - env: ver=0.27.0
-    - env: ver=0.27.1
-    - env: ver=0.27.2
-
 os: linux-ppc64le
-dist: xenial
-language: java
 sudo: required
-jdk:
-  - openjdk8
+
+env:
+  - ver=0.28.0
+  - ver=0.28.1
+  - ver=0.29.0
+  - ver=0.29.1
+  - ver=1.0.0
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y build-essential python3 zip unzip
+  - sudo apt-get install build-essential openjdk-8-jdk python zip unzip
   - python3 bazel-version.py
 
 script:
