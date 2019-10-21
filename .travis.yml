@@ -1,11 +1,12 @@
-os: linux-ppc64le
+os: linux
+arch: ppc64le
 sudo: required
 
 env:
-  - ver=0.28.0
-  - ver=0.28.1
-  - ver=0.29.0
-  - ver=0.29.1
+#   - ver=0.28.0
+#   - ver=0.28.1
+#   - ver=0.29.0
+#   - ver=0.29.1
   - ver=1.0.0
 
 before_install:
@@ -20,3 +21,10 @@ deploy:
   provider: script  
   script: sudo apt-get install -y lftp; bash ftp_upload.sh
   skip_cleanup: true
+
+notifications:
+  slack:
+    rooms:
+      - secure: "FWATQ1L0REWlv2r7OBEgmM0X60qGveibTyvvn8fyQbACl/YJKexH0W+FX55Yf4OGp8Hl07ezGb7qpNEi9pZ3mzIWYf14SqN9skn2nPTZGV0eIs6tGQIos6SHXg6xth9HOQRWOGE1xFWtp7ciwvdy67iWJoO7MBf2W1fTP6++5sDR+0/oMVZH9JPM0ubW6kewOlfu7n1Vxzzh/oAwLiRukVdCaiJ0khFmVdQSoym+JNlG5mVTO0jXC91lrRsDWwLcBF/vORNsY38xZZIbAvxETiYZnN8dZo4N0OHtFb/pX7I2hESgsFb+p6hM5bzqMvxspn+f55KIvyZznjSMSpGS9W5eXTtpS7h7rpGVCkj9ULEiuIcYbqGe41lFFEArqKC4u9galUjOXkPnwzpqtkhbR4vjDJ8foB9/8aKPgW0qJ5Oims6ctRu5iLs16DvH1Qq+z1QqaC51Uts3irhxw18Stj7o3bcpXrLwor1zcYeIk7dXcfxzi0VTd1tTOOWs+2qpc41gnDrEEbnFZ9ug5i0fuAVV5WhNEnDJqiG7KUslNmTxc8lXPSLsfq77nOaUluw2vP33mJnCJ+6NQZKfWPfuxp14RNvZtZMEuw1Drvb8oAvUkkdXW1tGyIRDKF+t/LdDH50o0fYFX34Dg0rYcvTtDdxtjHLgPtVYvnZZJKRlxK4="
+    on_success: change
+    on_failure: always
