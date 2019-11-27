@@ -2,15 +2,8 @@ os: linux
 arch: ppc64le
 sudo: required
 
-env:
-#   - ver=0.28.0
-#   - ver=0.28.1
-#   - ver=0.29.0
-#   - ver=0.29.1
-#   - ver=1.0.0
-#   - ver=1.0.1
-#   - ver=1.1.0
-  - ver=1.2.0
+#env:
+#  - ver=1.2.0
 
 before_install:
   - sudo apt-get update
