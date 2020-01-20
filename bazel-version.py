@@ -1,5 +1,6 @@
 import requests
 import re
+import sys
 
 # find and save the current Github release
 html = str(
@@ -15,7 +16,7 @@ file.close()
 # find and save the current Bazel version on FTP server
 html = str(
     requests.get(
-        'https://oplab9.parqtec.unicamp.br/pub/ppc64el/bazel/ubuntu_16.04/'
+        'https://oplab9.parqtec.unicamp.br/pub/ppc64el/bazel/ubuntu_' + sys.argv[1] + '/'
     ).content)
 index = html.rfind('_ppc64le_')
 ftp_version = html[index + 9:index + 15]

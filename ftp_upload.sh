@@ -9,7 +9,7 @@ if [ $github_version != $ftp_version ]
 then
     FTP_HOST='oplab9.parqtec.unicamp.br'
     LOCALPATH=$TRAVIS_BUILD_DIR/bazel/output
-    REMOTEPATH='/ppc64el/bazel/ubuntu_16.04'
+    REMOTEPATH="/ppc64el/bazel/ubuntu_$dist_version"
 
     # Upload files from LOCALPATH recursively to REMOTEPATH
     lftp -f "
