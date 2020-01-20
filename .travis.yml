@@ -1,6 +1,6 @@
 os: linux
 arch: ppc64le
-language: minimal
+language: shell
 
 #env:
 #  - ver=1.2.0
@@ -17,7 +17,7 @@ script:
 deploy:
   provider: script  
   script: sudo apt-get install -y lftp; bash ftp_upload.sh
-  cleanup: false
+  skip_cleanup: true
 
 notifications:
   slack:
