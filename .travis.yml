@@ -14,7 +14,14 @@ jobs:
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install build-essential default-jre default-jdk python zip unzip python3-pip
+  - sudo apt-get install build-essential python zip unzip python3-pip
+  #Instalando Java 11 para Ubuntu 16.04 e Ubuntu 18.04
+  - wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.6%2B10/OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.6_10.tar.gz
+  - wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.6%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.6_10.tar.gz
+  - tar -xf OpenJDK11U-jre_ppc64le_linux_hotspot_11.0.6_10.tar.gz
+  - tar -xf OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.6_10.tar.gz
+  - export PATH=$PWD/jdk-11.0.6+10-jre/bin:$PATH
+  - export PATH=$PWD/jdk-11.0.6+10/bin:$PATH
   - sudo pip3 install requests
   - python3 bazel-version.py $dist_version
 
