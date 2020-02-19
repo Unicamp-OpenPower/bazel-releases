@@ -18,6 +18,7 @@ before_install:
   - sudo apt install default-jre default-jdk
   - sudo pip3 install requests
   - python3 bazel-version.py $dist_version
+  - github_version=$(cat github_version.txt)
 
 script:
   - wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/bazel/ubuntu_${dist_version}/bazel_bin_ppc64le_2.0.0
