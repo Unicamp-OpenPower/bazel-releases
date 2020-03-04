@@ -1,5 +1,0 @@
-third_party/BUILD
-1 next-line
-    "//src/conditions:linux_ppc": "*.so *.jnilib *.dll",
-----------------------------
-    "//src/conditions:linux_aarch64": "*.so *.jnilib *.dll",
