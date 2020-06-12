@@ -1,9 +1,7 @@
 os: linux
 arch: ppc64le
+sudo: required
 language: shell
-
-#env:
-#  - ver=1.2.0
 
 jobs:
   include:
