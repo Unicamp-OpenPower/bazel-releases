@@ -16,17 +16,17 @@ then
     wget -q https://github.com/bazelbuild/bazel/releases/download/$github_version/bazel-$github_version-dist.zip
     unzip -q bazel-$github_version-dist.zip -d bazel
     cd bazel
-    ini=$(pwd)
+    #ini=$(pwd)
     #rm $ini/src/conditions/BUILD
     #cd $ini/src/conditions/
     #wget https://raw.githubusercontent.com/bazelbuild/bazel/78a29b0d0dfe350ab9513b6eefa9a2ed46c6c865/src/conditions/BUILD
     #rm $ini/src/main/java/com/google/devtools/build/lib/syntax/BUILD
     #cd $ini/src/main/java/com/google/devtools/build/lib/syntax/
     #wget https://raw.githubusercontent.com/bazelbuild/bazel/78a29b0d0dfe350ab9513b6eefa9a2ed46c6c865/src/main/java/com/google/devtools/build/lib/syntax/BUILD
-    rm $ini/tools/jdk/BUILD
-    cd $ini/tools/jdk/
-    wget https://raw.githubusercontent.com/bazelbuild/bazel/78a29b0d0dfe350ab9513b6eefa9a2ed46c6c865/tools/jdk/BUILD
-    cd $ini
+    #rm $ini/tools/jdk/BUILD
+    #cd $ini/tools/jdk/
+    #wget https://raw.githubusercontent.com/bazelbuild/bazel/78a29b0d0dfe350ab9513b6eefa9a2ed46c6c865/tools/jdk/BUILD
+    #cd $ini
     sudo EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk ./compile.sh
     sudo mv output/bazel output/bazel_bin_ppc64le_$github_version
 fi
