@@ -10,7 +10,7 @@ then
     FTP_HOST='oplab9.parqtec.unicamp.br'
     LOCALPATH=$TRAVIS_BUILD_DIR/bazel/output
     REMOTEPATH="/ppc64el/bazel/ubuntu_$dist_version"
-    ROOTPATH="/root/rpmbuild/RPMS/ppc64le"
+    ROOTPATH="~/rpmbuild/RPMS/ppc64le"
     REPO1="/repository/debian/ppc64el/bazel"
     REPO2="/repository/rpm/ppc64le/bazel"
 
