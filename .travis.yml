@@ -19,7 +19,7 @@ before_install:
 
 script:
   - bash build.sh
-  - bash release.sh
+  - sudo bash release.sh
 
 deploy:
   provider: script
