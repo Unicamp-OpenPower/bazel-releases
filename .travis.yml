@@ -14,14 +14,15 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install build-essential python zip unzip python3-pip
   - sudo apt install default-jre default-jdk
-  - sudo pip3 install requests
+  - sudo pip3 install requests rpm
   - python3 bazel-version.py $dist_version
 
 script:
   - bash build.sh
+  - bash release.sh
 
 deploy:
-  provider: script  
+  provider: script
   script: sudo apt-get install -y lftp; bash ftp_upload.sh
   skip_cleanup: true
 
