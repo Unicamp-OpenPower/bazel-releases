@@ -12,7 +12,6 @@ then
   mv empacotar-deb.sh ../$LOCALPATH
   mv empacotar-rpm.sh ../$LOCALPATH
   cd ../$LOCALPATH
-  pwd
-  ##./empacotar-deb.sh bazel bazel_bin_ppc64le_$github_version $github_version "gcc, default-jdk"
-  ##sudo ./empacotar-rpm.sh bazel bazel_bin_ppc64le_$github_version $github_version "gcc, java-11-openjdk-devel" "Build and test software of any size, quickly and reliably"
+  ./empacotar-deb.sh bazel bazel_bin_ppc64le_$github_version $github_version "gcc, default-jdk"
+  sudo ./empacotar-rpm.sh bazel bazel_bin_ppc64le_$github_version $github_version "gcc, java-11-openjdk-devel" "Build and test software of any size, quickly and reliably"
 fi

@@ -10,7 +10,6 @@ then
     wget -q https://github.com/bazelbuild/bazel/releases/download/$github_version/bazel-$github_version-dist.zip
     unzip -q bazel-$github_version-dist.zip -d bazel
     cd bazel
-    mkdir output
-    ##sudo EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk ./compile.sh
-    ##sudo mv output/bazel output/bazel_bin_ppc64le_$github_version
+    sudo EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk ./compile.sh
+    sudo mv output/bazel output/bazel_bin_ppc64le_$github_version
 fi
