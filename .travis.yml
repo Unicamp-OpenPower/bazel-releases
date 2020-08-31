@@ -11,8 +11,8 @@ jobs:
       env: dist_version=18.04
 
 before_install:
-  - sudo get update
-  - sudo get install build-essential python zip unzip python3-pip rpm
+  - sudo apt update
+  - sudo apt install build-essential python zip unzip python3-pip rpm
   - sudo apt install default-jre default-jdk
   - sudo pip3 install requests
   - python3 bazel-version.py $dist_version
