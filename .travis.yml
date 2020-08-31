@@ -12,19 +12,20 @@ jobs:
 
 before_install:
   - sudo apt update
-  - sudo apt install build-essential python zip unzip python3-pip rpm
-  - sudo apt install default-jre default-jdk
-  - sudo pip3 install requests
-  - python3 bazel-version.py $dist_version
+  - sudo apt install rpm
+  ##- sudo apt install build-essential python zip unzip python3-pip
+  ##- sudo apt install default-jre default-jdk
+  ##- sudo pip3 install requests
+  ##- python3 bazel-version.py $dist_version
 
 script:
   - bash build.sh
   - bash release.sh
 
-deploy:
-  provider: script
-  script: sudo apt-get install -y lftp; bash ftp_upload.sh
-  skip_cleanup: true
+##deploy:
+  ##provider: script
+  ##script: sudo apt-get install -y lftp; bash ftp_upload.sh
+  ##skip_cleanup: true
 
 notifications:
   slack:
