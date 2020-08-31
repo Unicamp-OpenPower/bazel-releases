@@ -13,10 +13,10 @@ jobs:
 before_install:
   - sudo apt update
   - sudo apt install rpm
-  ##- sudo apt install build-essential python zip unzip python3-pip
+  - sudo apt install build-essential python zip unzip python3-pip
   ##- sudo apt install default-jre default-jdk
-  ##- sudo pip3 install requests
-  ##- python3 bazel-version.py $dist_version
+  - sudo pip3 install requests
+  - python3 bazel-version.py $dist_version
 
 script:
   - bash build.sh
