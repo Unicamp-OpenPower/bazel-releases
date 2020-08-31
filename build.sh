@@ -27,6 +27,7 @@ then
     #cd $ini/tools/jdk/
     #wget https://raw.githubusercontent.com/bazelbuild/bazel/78a29b0d0dfe350ab9513b6eefa9a2ed46c6c865/tools/jdk/BUILD
     #cd $ini
-    sudo EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk ./compile.sh
-    sudo mv output/bazel output/bazel_bin_ppc64le_$github_version
+    ##sudo EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk ./compile.sh
+    ##sudo mv output/bazel output/bazel_bin_ppc64le_$github_version
+    pwd
 fi
