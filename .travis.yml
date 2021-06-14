@@ -24,7 +24,7 @@ script:
 
 deploy:
   provider: script
-  script: sudo apt-get install -y lftp; bash ftp_upload.sh
+  script: sudo apt-get install -y lftp; printf "set ssl:verify-certificate false" >> ~/.lftprc; bash ftp_upload.sh
   skip_cleanup: true
 
 notifications:
