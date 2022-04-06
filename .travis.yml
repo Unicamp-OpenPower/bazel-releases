@@ -5,10 +5,10 @@ language: shell
 
 jobs:
   include:
-    - dist: xenial
-      env: dist_version=16.04
     - dist: bionic
       env: dist_version=18.04
+    - dist: focal
+      env: dist_version=20.04
 
 before_install:
   - sudo apt update
